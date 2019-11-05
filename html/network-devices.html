@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Network Devices | Edge Monitor</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="./img/favicon.png" rel="shortcut icon"/>
+    <link href="./css/reset.min.css" rel="stylesheet">
+    <link href='./css/pikaday.min.css' rel='stylesheet'>
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="container">
+    <div class="col" id="sidebar">
+        <nav>
+            <div class="header">
+                <a class="brand" href="#">
+                    <img src="./img/header-logo.png" style="max-width: 5em;">
+                </a>
+
+                <button id="menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <ul>
+                <li class="search">
+                    <input class="form-control" id="search" placeholder="Search..."/>
+                    <button class="btn-search"><i class="fa fa-lg fa-search"></i></button>
+                </li>
+                <li class="nav-text">Dashboards</li>
+                <li><a href="./">Overview</a></li>
+                <li><a href="./computers.html">Computers</a></li>
+                <li><a href="./servers.html">Servers</a></li>
+                <li><a class="active" href="./network-devices.html">Network Devices</a></li>
+
+                <li class="nav-text">Tools</li>
+                <li><a href="./power-control.html">Power Control</a></li>
+                <li><a href="./automation.html">Automation</a></li>
+                <li><a href="./remote-console.html">Remote Console</a></li>
+                <li><a href="./device-checkups.html">Device Checkups</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col">
+        <div class="row fluid header">
+            <div class="label"><span>Dashboard</span>
+                <h2>Network Devices</h2>
+            </div>
+
+            <div id="date-range">
+                <input class="form-control"/>
+                <div>-</div>
+                <input class="form-control"/>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+        
+        <div class="row sparklines">
+            <div class="col sparkline">
+                <div class="chart">
+                    <div class="label"><span>Devices Online</span>
+                        <h2>42</h2>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="devices-online"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col sparkline">
+                <div class="chart">
+                    <div class="label"><span>Devices Offline</span>
+                        <h2>5</h2>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="devices-offline"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col sparkline">
+                <div class="chart">
+                    <div class="label"><span>Timeouts</span>
+                        <h2>2</h2>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="timeouts"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col list-container">
+                <div class="list">
+                    <h6>Ping Checks</h6><a
+                        href="#"><span>Desktop (1920x1080)</span><span>3,929,481</span></a><a href="#"><span>Desktop (1366x768)</span><span>1,143,393</span></a><a
+                        href="#"><span>Desktop (1440x900)</span><span>938,287</span></a><a href="#"><span>Desktop (1280x800)</span><span>749,393</span></a><a
+                        href="#"><span>Tablet (1024x768)</span><span>695,912</span></a><a href="#"><span>Tablet (768x1024)</span><span>501,938</span></a><a
+                        href="#"><span>Phone (320x480)</span><span>392,842</span></a><a
+                        href="#"><span>Phone (720x450)</span><span>298,183</span></a><a href="#"><span>Desktop (2560x1080)</span><span>193,129</span></a><a
+                        href="#"><span>Desktop (2560x1080)</span><span>193,129</span></a>
+                </div>
+            </div>
+        </div>            
+        </div>
+    </div>
+</div>
+<!-- partial -->
+<script src='./js/date-selector.js'></script>
+<script src='./js/chart.bundle.min.js'></script>
+<script src='./js/pikaday.min.js'></script>
+<script src='./js/fontawesome.js'></script>
+<script src='./js/solid.js'></script>
+<script src='./js/anime.min.js'></script>
+<script src='./js/dashboard.js'></script>
+<script src="./js/dashboards/network-devices-charts.js"></script>
+
+</body>
+
+</html>

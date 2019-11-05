@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Edge Monitor</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="./img/favicon.png" rel="shortcut icon"/>
+    <link href="./css/reset.min.css" rel="stylesheet">
+    <link href='./css/pikaday.min.css' rel='stylesheet'>
+    <link href="./css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="container">
+    <div class="col" id="sidebar">
+        <nav>
+            <div class="header">
+                <a class="brand" href="#">
+                    <img src="./img/header-logo.png" style="max-width: 5em;">
+                </a>
+
+                <button id="menu">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <ul>
+                <li class="search">
+                    <input class="form-control" id="search" placeholder="Search..."/>
+                    <button class="btn-search"><i class="fa fa-lg fa-search"></i></button>
+                </li>
+                <li class="nav-text">Dashboards</li>
+                <li><a class="active" href="./">Overview</a></li>
+                <li><a href="#">Computers</a></li>
+                <li><a href="#">Servers</a></li>
+                <li><a href="./network-devices.html">Network Devices</a></li>
+
+                <li class="nav-text">Tools</li>
+                <li><a href="#">Power Control</a></li>
+                <li><a href="#">Automation</a></li>
+                <li><a href="#">Remote Console</a></li>
+                <li><a href="#">Device Checkups</a></li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col">
+        <div class="row fluid header">
+            <div class="label"><span>Dashboard</span>
+                <h2>Overview</h2>
+            </div>
+
+            <div id="date-range">
+                <input class="form-control"/>
+                <div>-</div>
+                <input class="form-control"/>
+            </div>
+
+        </div>
+        <div class="divider"></div>
+        <div class="row fluid">
+            <div class="doughnut">
+                <div class="chart">
+                    <canvas id="cpu"></canvas>
+                </div>
+                <strong>System</strong>
+                <h4>CPU Issues</h4>
+            </div>
+            <div class="doughnut">
+                <div class="chart">
+                    <canvas id="ram"></canvas>
+                </div>
+                <strong>System</strong>
+                <h4>RAM Issues</h4>
+            </div>
+            <div class="doughnut">
+                <div class="chart">
+                    <canvas id="disk"></canvas>
+                </div>
+                <strong>System</strong>
+                <h4>Disk Issues</h4>
+            </div>
+
+            <div class="doughnut">
+                <div class="chart">
+                    <canvas id="network"></canvas>
+                </div>
+                <strong>System</strong>
+                <h4>Network Issues</h4>
+            </div>
+            <div class="doughnut">
+                <div class="chart">
+                    <canvas id="updates"></canvas>
+                </div>
+                <strong>System</strong>
+                <h4>Update Issues</h4>
+            </div>
+            <div class="doughnut">
+                <div class="chart">
+                    <canvas id="security"></canvas>
+                </div>
+                <strong>System</strong>
+                <h4>Security Issues</h4>
+            </div>
+        </div>
+        <div class="divider divider-mid">
+            <h3>Quick Stats</h3>
+        </div>
+        <div class="row sparklines">
+            <div class="col sparkline">
+                <div class="chart">
+                    <div class="label"><span>Bytes In</span>
+                        <h2>1,293 GB</h2>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="test4"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col sparkline">
+                <div class="chart">
+                    <div class="label"><span>Bytes Out</span>
+                        <h2>758 GB</h2>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="test5"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col sparkline">
+                <div class="chart">
+                    <div class="label"><span>Dropped Packets</span>
+                        <h2>1,293</h2>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="test6"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col sparkline">
+                <div class="chart">
+                    <div class="label"><span>Collisions</span>
+                        <h2>14</h2>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="test7"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row top">
+            <div class="col">
+                <div class="list">
+                    <h6>CPU Load</h6><a href="#"><span class="progress"
+                                                       style="width:62.4%;"></span><span>United States</span><span>62.4%</span></a><a
+                        href="#"><span class="progress" style="width:15.0%;"></span><span>India</span><span>15.0%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:5.0%;"></span><span>United Kingdom</span><span>5.0%</span></a><a
+                        href="#"><span class="progress" style="width:5.0%;"></span><span>Canada</span><span>5.0%</span></a><a
+                        href="#"><span class="progress" style="width:4.5%;"></span><span>Russia</span><span>4.5%</span></a><a
+                        href="#"><span class="progress" style="width:2.3%;"></span><span>Mexico</span><span>2.3%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:1.7%;"></span><span>Spain</span><span>1.7%</span></a><a
+                        href="#"><span class="progress" style="width:1.5%;"></span><span>France</span><span>1.5%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:1.4%;"></span><span>South Africa</span><span>1.4%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:1.2%;"></span><span>Japan</span><span>1.2%</span></a>
+                </div>
+                <!--<a class="btn primary" href="#">View More</a>-->
+            </div>
+            <div class="col flex-start">
+                <div class="list">
+                    <h6>RAM Usuage</h6><a href="#"><span>/ (Logged out)</span><span>3,929,481</span></a><a
+                        href="#"><span>/ (Logged in)</span><span>1,143,393</span></a><a
+                        href="#"><span>/tour</span><span>938,287</span></a><a
+                        href="#"><span>/features/something</span><span>749,393</span></a><a href="#"><span>/features/another-thing</span><span>695,912</span></a><a
+                        href="#"><span>/users/username</span><span>501,938</span></a><a
+                        href="#"><span>/page-title</span><span>392,842</span></a><a
+                        href="#"><span>/some/page-slug</span><span>298,183</span></a><a href="#"><span>/another/directory/and/page-title</span><span>193,129</span></a><a
+                        href="#"><span>/one-more/page/directory/file-name</span><span>93,382</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="row top">
+            <div class="col">
+                <div class="list">
+                    <h6>Disk Usuage</h6><a href="#"><span class="progress" style="width:62.4%;"></span><span>United States</span><span>62.4%</span></a><a
+                        href="#"><span class="progress" style="width:15.0%;"></span><span>India</span><span>15.0%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:5.0%;"></span><span>United Kingdom</span><span>5.0%</span></a><a
+                        href="#"><span class="progress" style="width:5.0%;"></span><span>Canada</span><span>5.0%</span></a><a
+                        href="#"><span class="progress" style="width:4.5%;"></span><span>Russia</span><span>4.5%</span></a><a
+                        href="#"><span class="progress" style="width:2.3%;"></span><span>Mexico</span><span>2.3%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:1.7%;"></span><span>Spain</span><span>1.7%</span></a><a
+                        href="#"><span class="progress" style="width:1.5%;"></span><span>France</span><span>1.5%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:1.4%;"></span><span>South Africa</span><span>1.4%</span></a><a
+                        href="#"><span class="progress"
+                                       style="width:1.2%;"></span><span>Japan</span><span>1.2%</span></a>
+                </div>
+            </div>
+            <div class="col flex-start">
+                <div class="list">
+                    <h6>Network </h6><a href="#"><span>/ (Logged out)</span><span>3,929,481</span></a><a href="#"><span>/ (Logged in)</span><span>1,143,393</span></a><a
+                        href="#"><span>/tour</span><span>938,287</span></a><a
+                        href="#"><span>/features/something</span><span>749,393</span></a><a href="#"><span>/features/another-thing</span><span>695,912</span></a><a
+                        href="#"><span>/users/username</span><span>501,938</span></a><a
+                        href="#"><span>/page-title</span><span>392,842</span></a><a
+                        href="#"><span>/some/page-slug</span><span>298,183</span></a><a href="#"><span>/another/directory/and/page-title</span><span>193,129</span></a><a
+                        href="#"><span>/one-more/page/directory/file-name</span><span>93,382</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src='./js/date-selector.js'></script>
+<script src='./js/chart.bundle.min.js'></script>
+<script src='./js/pikaday.min.js'></script>
+<script src='./js/fontawesome.js'></script>
+<script src='./js/solid.js'></script>
+<script src='./js/anime.min.js'></script>
+<script src='./js/dashboard.js'></script>
+<script src="./js/dashboards/overview.js"></script>
+
+</body>
+
+</html>
