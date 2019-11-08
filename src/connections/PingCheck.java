@@ -1,4 +1,4 @@
-package connections.monitors;
+package connections;
 
 import java.io.IOException;
 import java.net.InetAddress;

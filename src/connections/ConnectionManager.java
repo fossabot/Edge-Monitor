@@ -1,7 +1,5 @@
 package connections;
 
-import connections.monitors.PingCheck;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -10,7 +8,7 @@ import java.util.Scanner;
 public class ConnectionManager extends Thread {
 
     private static ArrayList<PingCheck> pingChecks = new ArrayList<>();
-    private static ArrayList<NetworkDevice> deviceMonitors = new ArrayList<>();
+    private static ArrayList<DeviceMonitor> deviceMonitors = new ArrayList<>();
 
     public void importPingChecks() {
         if (pingChecks.isEmpty()) {
@@ -60,7 +58,7 @@ public class ConnectionManager extends Thread {
             Scanner deviceScanner = new Scanner(new File("Devices.ini"));
 
             while (deviceScanner.hasNext())
-                deviceMonitors.add(new NetworkDevice(deviceScanner.nextLine(), deviceScanner.nextLine(),
+                deviceMonitors.add(new DeviceMonitor(deviceScanner.nextLine(), deviceScanner.nextLine(),
                         deviceScanner.nextLine(), deviceScanner.nextLine(), deviceScanner.nextLine()));
 
             this.startDeviceMonitors();
@@ -75,14 +73,14 @@ public class ConnectionManager extends Thread {
     }
 
     private void startDeviceMonitors() {
-        for (NetworkDevice networkDevice : deviceMonitors) {
+        for (DeviceMonitor networkDevice : deviceMonitors) {
             if (!networkDevice.isReachable())
                 networkDevice.start();
         }
     }
 
     private void stopDeviceMonitors() {
-        for (NetworkDevice networkDevice : deviceMonitors) {
+        for (DeviceMonitor networkDevice : deviceMonitors) {
             if (networkDevice.isReachable())
                 networkDevice.interrupt();
         }
